@@ -270,4 +270,4 @@ datakNN()
 kNN error rate with k of 3 is `r fitb("0.09")` (Just 2 decimal digits.)
 
 
-
+`r total_correct("h3")`
