@@ -254,6 +254,11 @@ eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <div id="sql-basics" class="section level1">
 <h1>SQL Basics</h1>
 <p>Prepare SQL Script to calculate transition matrix with data from <a href="https://docs.google.com/spreadsheets/d/1vVGJziFmCnpS6-ePgc6ZpjVlPLrX9QMo_8gBJTeNy-k/edit?usp=sharing">this link</a> as per below template.</p>
+<ul>
+<li>Roll back: Loans that have DPD group lower than started with (e.g. Loans that are in B1 as of 201906 and move back to B0 as of 201907)</li>
+<li>Stabilize: Loans that have DPD group that is the same as started with (e.g. Loans that are in B1 as of 201906 and stay the same as B1 as of 201907)</li>
+<li>Roll forward: Loans that have DPD group higher than started with (e.g. Loans that are in B1 as of 201906 and move to B2 as of 201907)</li>
+</ul>
 <pre><code>## Month  | DPDGroup | Roll back    | Stabilize |   Roll forward|
 ## 201906 |   B0     |              |       97% |           3%  |
 ## 201906 |   B1     |              |           |               |

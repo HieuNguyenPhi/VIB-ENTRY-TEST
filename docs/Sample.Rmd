@@ -164,6 +164,10 @@ List of beta: `r fitb("[-26747.0380472  -10794.88612326   6346.46347607   7022.0
 
 Prepare SQL Script to calculate transition matrix with data from [this link](https://docs.google.com/spreadsheets/d/1vVGJziFmCnpS6-ePgc6ZpjVlPLrX9QMo_8gBJTeNy-k/edit?usp=sharing) as per below template.
 
+- Roll back: Loans that have DPD group lower than started with (e.g. Loans that are in B1 as of 201906 and move back to B0 as of 201907)
+- Stabilize: Loans that have DPD group that is the same as started with (e.g. Loans that are in B1 as of 201906 and stay the same as B1 as of 201907)
+- Roll forward: Loans that have DPD group higher than started with (e.g. Loans that are in B1 as of 201906 and move to B2 as of 201907)
+
 ```{r, echo = FALSE}
 cat(
 'Month  | DPDGroup | Roll back	| Stabilize |	Roll forward|
