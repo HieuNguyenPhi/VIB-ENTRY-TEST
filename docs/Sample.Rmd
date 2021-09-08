@@ -10,7 +10,9 @@ library(tidyverse)
 tutorial::go_interactive()
 ```
 
+
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbB7Mb2eFDFfzY1uWWX-dD2LAL11ItY9DIdqoATzisBaBjFQ/viewform?embedded=true" width="1000" height="1034" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
 # SQL Query 40%
 
 Prepare SQL Script to calculate transition matrix with data from [this link](https://docs.google.com/spreadsheets/d/1vVGJziFmCnpS6-ePgc6ZpjVlPLrX9QMo_8gBJTeNy-k/edit?usp=sharing) as per below template.
