@@ -14,30 +14,7 @@ This is an Entry test created by the VIB DSC Team for the Data Analyst position.
 
 # Statistical thinking
 
-## Question 1: Probability thinking 1
-
-You are the analyst of credit card block in VIB. Some days your colleagues sell a lot of cards and some other days they don't, independently of other days. In fact, the distribution of the number of cards they sell each day is shown below.
-
-```{r, echo = FALSE}
-data.frame(x = c(80, 95, 105, 120),
-                 cnt = c(0.20, 0.30, 0.30, 0.20)) %>%
-  ggplot(aes(x = x, y = cnt)) +
-  geom_col(width = 2, fill = 'steelblue') +
-  theme_minimal() +
-  labs(x = '', y = '')
-```
-
-If we measure cards sales for 100 days, what is the approximate probability that the average cards sales (over the 100 days) will be more than 102 cards?
-
-Please fill in the result with 3 decimal digits: `r fitb("0.065")`
-
-## Question 2: Simulation 1
-
-You are assigned to an ad-hoc task in which you decide to go to Monte Carlo simulation. The simulation starts with a customized random seed. You have an idea of generating pseudo-random seeds with roulette game. The game involves spinning a wheel that has many slots around it. There is 1 gold slot, 18 red slots, and 18 black slots. Your code runs 500 times and you find that red is hit 260 times.
-
-Can you determine whether the generator is fair? `r mcq(c(answer = "Yes", "No"))`. This is because the p-value for your determination is `r fitb("0.134")` and `r mcq(c(answer = "larger","less"))` than 0.05.
-
-## Question 3: Probability thinking 2
+## Question 1: Probability thinking 
 
 Defaulting on a loan means failing to pay it back on time. The default rate among VIB clients on their personal loans is 1%. As a project you develop a test to predict which client will default. Your test is good but not perfect. It gives 4% false positives, i.e. predicting a customer will default who in fact will not. If has a 0% false negative rate, i.e. predicting a customer won’t default who in fact will.
 
@@ -45,7 +22,7 @@ Defaulting on a loan means failing to pay it back on time. The default rate amon
 
 2. Suppose your boss offers to bet you the customer in part (1) won’t default. He wants you to pay him \$100 if the customer doesn’t default and he’ll pay you \$400 if the customer does default. Is this a good bet for you to take? `r mcq(c(answer = "Yes", "No"))`
 
-## Question 4: Simulation 2
+## Question 2: Simulation 
 
 Data is collected on the time between arrivals of customers at a branch of VIB. We collect a data set of size 45 with sample mean $\bar{x}$ = 5.0 and sample standard deviation $s$ = 4.0. By bootstrapping, we generate 500 values for the differences $\delta^* = \bar{x}^* - \bar{x}$. The smallest and largest 150 are written in non-decreasing order in `smallest` and `largest` variables. Use this data to find an 80\% bootstrap confidence interval for $\mu$.
 
@@ -81,35 +58,7 @@ head(smallest)
 head(largest)
 ```
 
-# Statistical programming
-
-## Question 1: R programming
-
-You are given the dataset called `insurance` contains 1338 observations (rows) and 7 features (columns). The insurance data contains 4 numerical features (age, bmi, children, expenses) and 3 nominal features (sex, smoker and region). We are interested in which determinants are significant for predicting the insurance expenses.
-
-```{r ex="create_b1", type="pre-exercise-code"}
-insurance <- read.csv('https://raw.githubusercontent.com/HieuNguyenPhi/VIBTESTENTRY/main/insurance_dataset.csv', header = T)
-```
-
-```{r ex="create_b1", type="sample-code"}
-head(insurance)
-```
-
-1. Is there multicollinearity? `r mcq(c(answer = "Yes", "No"))`
-2. The distribution of insurance charges is `r mcq(c("symmetric", answer = "skewed to the right", "skewed to the left"))`
-3. The distribution of insurance charges is `r mcq(c("optimal", answer = "not optimal"))` because linear regression demands a `r mcq(c(answer = 'Gaussian distribution', 'Bell-shaped distribution', 'Skewed distribution'))` for the dependent variable.
-4. Is there any nonlinearity in the dataset? `r mcq(c(answer = "Yes", "No"))`
-5. Our data was distributed roughly evenly across four geographic areas and genders, with the majority of respondents being nonsmokers. `r torf(TRUE)`
-6. The nominal data has been transformed already with following rules:
-
-- `gender_num` = 1 if male and 0 otherwise;
-- `smoker_num` = 1 if smoking and 0 otherwise;
-- `region_num` = 1 if northeast, 2 if northwest, 3 if southeast and 4 if southwest
-
-Performing stepwise linear regression from `null` and `full` models which relates zero and six independent variables to the expenses, respectively. Final model has Multiple R-squared is `r fitb("0.751")`. The model's goodness of fit is rather `r mcq(c(answer = "well","not too well"))`.
-7. Other areas' citizens predict more expenditures on average when compared to the northeast. `r torf(FALSE)`
-
-## Question 2: Python programming
+# Statistical programming: Python
 
 1. Given the following dataset, write a function `hmean` to calculate the harmonic mean.
 
@@ -160,7 +109,7 @@ print(beta) #<--- your result should be here
 
 List of beta: `r fitb("[-26747.0380472  -10794.88612326   6346.46347607   7022.04650577   53.33537297   9424.86608455]")`
 
-# SQL Basics
+# SQL Query
 
 Prepare SQL Script to calculate transition matrix with data from [this link](https://docs.google.com/spreadsheets/d/1vVGJziFmCnpS6-ePgc6ZpjVlPLrX9QMo_8gBJTeNy-k/edit?usp=sharing) as per below template.
 
@@ -183,8 +132,6 @@ cat(
 
 
 # Machine learning
-
-## Question 1 
 
 From following pseudo code of k-nearest neighbors for classification, please convert it into Python code. Using only `numpy` as `np`.
 
@@ -219,59 +166,6 @@ def createDataSet():
 dataSet, labels = createDataSet()
 print(kNN([0,0], dataSet, labels, k = 3))
 ```
-
-
-## Question 2
-
-Applying your kNN code above to our prepared dataset. Please define a function which compute error rate of your kNN code.
-
-$$errorRate = \frac{wrongLabels}{totalLabels}$$
-
-```{python ex="create_b7", type="pre-exercise-code"}
-import numpy as np
-import requests
-def file2matrix(filename):
-    r = requests.get(filename)
-    f = r.text
-    returnMat = []
-    labelVec = []
-    content = f.split('\n')
-    for i in content[:-1]:
-        item = i.split('\t')
-        returnMat.append( [float(j) for j in item[:-1]])
-        labelVec.append(item[-1][:-2])
-    return  np.array(returnMat), np.array(labelVec)
-
-dataSet, labels = file2matrix('https://raw.githubusercontent.com/HieuNguyenPhi/VIBTESTENTRY/main/datingTestSet.txt')
-```
-
-```{python ex="create_b7", type="sample-code"}
-print(dataSet[:10,:])
-print(labels[:10])
-
-# Use following function for normalization
-
-def autoNorm(dataSet):
-    minVals = dataSet.min(0)
-    maxVals = dataSet.max(0)
-    ranges = maxVals - minVals
-    normDataSet = np.zeros(dataSet.shape)
-    numObs = dataSet.shape[0]
-    normDataSet = dataSet - np.tile(minVals, (numObs,1))
-    normDataSet = normDataSet / np.tile(ranges, (numObs,1))
-    return normDataSet
-
-def datakNN():
-  # Your code here
-  pass
-  # Print the result, return None
-  print(...)
-
-datakNN()
-  
-```
-
-kNN error rate with k of 3 is `r fitb("0.09")` (Just 2 decimal digits.)
 
 
 `r total_correct("h3")`
