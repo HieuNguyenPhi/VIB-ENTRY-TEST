@@ -12,7 +12,29 @@ tutorial::go_interactive()
 
 This is an Entry test created by the VIB DSC Team for the Data Analyst position. The test is a form of a psychometric test prepared by subject matter experts to understand and assess a candidate's expertise in analyzing high-level quantitative data.
 
-# Statistical thinking
+# SQL Query 40%
+
+Prepare SQL Script to calculate transition matrix with data from [this link](https://docs.google.com/spreadsheets/d/1vVGJziFmCnpS6-ePgc6ZpjVlPLrX9QMo_8gBJTeNy-k/edit?usp=sharing) as per below template.
+
+- Roll back: Loans that have DPD group lower than started with (e.g. Loans that are in B1 as of 201906 and move back to B0 as of 201907)
+- Stabilize: Loans that have DPD group that is the same as started with (e.g. Loans that are in B1 as of 201906 and stay the same as B1 as of 201907)
+- Roll forward: Loans that have DPD group higher than started with (e.g. Loans that are in B1 as of 201906 and move to B2 as of 201907)
+
+```{r, echo = FALSE}
+cat(
+'Month  | DPDGroup | Roll back	| Stabilize |	Roll forward|
+201906 |   B0	 |              |	    97% |         	3%  |
+201906 |   B1	 |              |           |	          	|
+201906 |   B2	 |              |           |	          	|
+201906 |   B3	 |              |           |	          	|')
+```
+
+```{python ex="create_b5", type="sample-code"}
+# You can type SQL here, please do not run it
+```
+
+
+# Statistical thinking 20%
 
 ## Question 1: Probability thinking 
 
@@ -58,7 +80,7 @@ head(smallest)
 head(largest)
 ```
 
-# Statistical programming: Python
+# Statistical programming: Python 20%
 
 1. Given the following dataset, write a function `hmean` to calculate the harmonic mean.
 
@@ -109,29 +131,7 @@ print(beta) #<--- your result should be here
 
 List of beta: `r fitb("[-26747.0380472  -10794.88612326   6346.46347607   7022.04650577   53.33537297   9424.86608455]")`
 
-# SQL Query
-
-Prepare SQL Script to calculate transition matrix with data from [this link](https://docs.google.com/spreadsheets/d/1vVGJziFmCnpS6-ePgc6ZpjVlPLrX9QMo_8gBJTeNy-k/edit?usp=sharing) as per below template.
-
-- Roll back: Loans that have DPD group lower than started with (e.g. Loans that are in B1 as of 201906 and move back to B0 as of 201907)
-- Stabilize: Loans that have DPD group that is the same as started with (e.g. Loans that are in B1 as of 201906 and stay the same as B1 as of 201907)
-- Roll forward: Loans that have DPD group higher than started with (e.g. Loans that are in B1 as of 201906 and move to B2 as of 201907)
-
-```{r, echo = FALSE}
-cat(
-'Month  | DPDGroup | Roll back	| Stabilize |	Roll forward|
-201906 |   B0	 |              |	    97% |         	3%  |
-201906 |   B1	 |              |           |	          	|
-201906 |   B2	 |              |           |	          	|
-201906 |   B3	 |              |           |	          	|')
-```
-
-```{python ex="create_b5", type="sample-code"}
-# You can type SQL here, please do not run it
-```
-
-
-# Machine learning
+# Machine learning 20%
 
 From following pseudo code of k-nearest neighbors for classification, please convert it into Python code. Using only `numpy` as `np`.
 
