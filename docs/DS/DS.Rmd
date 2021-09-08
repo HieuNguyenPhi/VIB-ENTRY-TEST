@@ -1,0 +1,40 @@
+---
+title: "Data Scientist Entry Test"
+output: webex::webex_default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(webex)
+library(tidyverse)
+tutorial::go_interactive()
+```
+
+This is an Entry test created by the VIB DSC Team for the Data Scientist position. The test is a form of a psychometric test prepared by subject matter experts to understand and assess a candidate's expertise in analyzing high-level quantitative data.
+
+# Logical thinking/ Concepts
+
+## Question 1
+
+You are designing a model that diagnoses whether a patient requires high risk surgery or not. Assuming that:
+
+- the binary label for a patient that needs the surgery is 1 (Positive).
+- the binary label for a patient that could use a less aggressive medical treatment is 0 (Negative).
+
+```{sql ex="create_b6", type="sample-code"}
+
+```
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdnRdqwoLzogAda7xXjfaG-7iCPRr3_1vpAKljAYICONJe5g/viewform?usp=pp_url&entry.1038519757=Hieu&entry.1056389537=0944780583&entry.1422554400=1994embedded=true" width="640" height="382" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+https://docs.google.com/forms/d/e/1FAIpQLSfdnRdqwoLzogAda7xXjfaG-7iCPRr3_1vpAKljAYICONJe5g/viewform?usp=pp_url&entry.1038519757=Hieu&entry.1056389537=0944780583&entry.1422554400=1994
+
+https://docs.google.com/forms/d/e/1FAIpQLSfzsXnOzru1je4WUp4cuYt4BlZvvL_nsW0grWqnKPrB1xif-w/viewform?usp=pp_url&entry.2005620554=Hieu&entry.1045781291=hieu@gmail.com&entry.1065046570=HCMC
+
+# Machine Learning
+
+# Probabilistic mathematics
+
+# Statistics
+
+
