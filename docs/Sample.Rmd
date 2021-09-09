@@ -1,5 +1,6 @@
 ---
 title: "Data Analyst Entry Test"
+author: "DSC Team - VIB"
 output: webex::webex_default
 ---
 
@@ -10,9 +11,7 @@ library(tidyverse)
 tutorial::go_interactive()
 ```
 
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbB7Mb2eFDFfzY1uWWX-dD2LAL11ItY9DIdqoATzisBaBjFQ/viewform?embedded=true" width="1000" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
+Please submit your answer via [this link](http://form-timer.com/start/3b8945e9). It is important to note that this is timed technical test. Try your best!
 
 # SQL Query 40%
 
@@ -32,7 +31,7 @@ cat(
 ```
 
 ```{python ex="create_b5", type="sample-code"}
-# You can type SQL here, please do not run it
+# Use this python to collect the data and processing data with sqlite3
 ```
 
 
@@ -137,7 +136,7 @@ List of beta: `r fitb("[-26747.0380472  -10794.88612326   6346.46347607   7022.0
 
 From following pseudo code of k-nearest neighbors for classification, please convert it into Python code. Using only `numpy` as `np`.
 
-```{python, echo = TRUE, eval = FALSE}
+```{sql, echo = TRUE, eval = FALSE, tut = FALSE}
 for everyPoint in dataSet:
   Calculate distance between observation X and the current point
   Sort the distances in increasing order
